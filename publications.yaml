@@ -8,10 +8,11 @@ publications:
       #   url: "#"
       # - text: "Code"
       #   url: "#"
+      - text: "Zenodo Preprint with Data Download"
+        url: "https://zenodo.org/records/14816701"
       - text: "TechRxiv Download"
         url: "https://www.techrxiv.org/users/889147/articles/1266652-developing-ultra-lite-ml-models-for-crash-detection-in-noisy-environments"
       - text: "OSF Preprints"
         url: "https://osf.io/preprints/osf/b6zpc_v1"
-      - text: "Preprint with Data Download"
-        url: "https://zenodo.org/records/14816701"
+      
   # Add more publications as needed
