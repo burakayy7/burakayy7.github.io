@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Burak Ayyorgun</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/johndoe.css">
+    <link rel="stylesheet" href="/publications.css"
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="publications">
+    <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a>
+    <header class="header" id="header"></header>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load the header content
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link">Resume</a>
+                    </li>
+			<li class="nav-item">
+                        	<a href="#recent" class="nav-link">Recent</a>
+                    	</li>
+                </ul>
+                <ul class="navbar-nav brand">
+                    <img src="assets/imgs/rsef_pic.jpg" alt="" class="brand-img">
+                    <li class="brand-txt">
+                        <h5 class="brand-title">Burak Ayyorgun</h5>
+                        <div class="brand-subtitle">Student Researcher in CS | Mathematics Enthusiast</div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                       <!-- <a href="#portfolio" class="nav-link">Portfolio</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blogs</a>
+                    </li>
+                    <li class="nav-item last-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+		    </li>
+                    	<li class="nav-item last-item">
+                        <a href="/publications.html" class="nav-link">Publications</a>
+                    </li>
+		    </li>
+                    <li class="nav-item last-item">
+                        <a href="/blog/courses" class="nav-link">Courses</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <h2 class="font-weight-light text-center mt-5">Publications</h2>
+        <span class="line mb-5 mx-auto"></span>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Conference Papers -->
+                <div class="col-md-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Preprints</h4>
+                            <span class="line"></span>
+                        </div>
+                        <div class="card-body" id="publications-list">
+                            <!-- Publications will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script>
+        // Load the header content
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load and parse the YAML file
+        fetch('/publications.yaml')
+            .then(response => response.text())
+            .then(data => {
+                const publications = jsyaml.load(data).publications;
+                const publicationsList = document.getElementById('publications-list');
+                publications.forEach(pub => {
+                    const pubItem = document.createElement('div');
+                    pubItem.classList.add('publication-item');
+                    pubItem.innerHTML = `
+                        <h5 class="text-danger">${pub.year}</h5>
+                        <p class="publication-title">${pub.title}</p>
+                        <p class="publication-authors">${pub.authors}</p>
+                        <p class="publication-venue">${pub.venue}</p>
+                        <div class="publication-links">
+                            ${pub.links.map(link => `<a href="${link.url}" class="btn btn-sm btn-outline-danger">${link.text}</a>`).join('')}
+                        </div>
+                        <hr>
+                    `;
+                    publicationsList.appendChild(pubItem);
+                });
+            })
+            .catch(error => console.error('Error loading publications:', error));
+    </script>
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope  -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+    
+    <!-- Google mpas -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- JohnDoe js -->
+    <script src="assets/js/johndoe.js"></script>
+
+
+</body>
+</html>

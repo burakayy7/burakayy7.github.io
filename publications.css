@@ -1,0 +1,31 @@
+.publication-item {
+    margin-bottom: 30px;
+}
+.publication-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.publication-authors {
+    font-size: 1.1rem;
+    color: #0f0f0f;
+}
+.publication-venue {
+    font-size: 0.975rem;
+    color: #232222;
+}
+.publication-links a {
+    margin-right: 10px;
+}
+.card-header {
+    background-color: #f8f9fa;
+}
+.card-body {
+    background-color: #ffffff;
+}
+.line {
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #dc3545;
+    margin: 10px 0;
+}

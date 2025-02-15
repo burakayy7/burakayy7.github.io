@@ -1,0 +1,17 @@
+publications:
+  - year: 2024
+    title: "Developing Ultra-lite ML Models for Crash Detection in Noisy Environments"
+    authors: "Ayyorgun, B."
+    venue: "Regeneron International Science and Engineering Fair Finalist, Embedded Systems. May 2024, Los Angeles"
+    links:
+      # - text: "PDF"
+      #   url: "#"
+      # - text: "Code"
+      #   url: "#"
+      - text: "TechRxiv Download"
+        url: "https://www.techrxiv.org/users/889147/articles/1266652-developing-ultra-lite-ml-models-for-crash-detection-in-noisy-environments"
+      - text: "OSF Preprints"
+        url: "https://osf.io/preprints/osf/b6zpc_v1"
+      - text: "Preprint with Data Download"
+        url: "https://zenodo.org/records/14816701"
+  # Add more publications as needed
